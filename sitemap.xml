@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://raeumlich.github.io/k8std-libsonnet/</loc>
+         <lastmod>2022-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://raeumlich.github.io/k8std-libsonnet/manifest/</loc>
+         <lastmod>2022-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://raeumlich.github.io/k8std-libsonnet/manifest/kindOrder/</loc>
+         <lastmod>2022-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://raeumlich.github.io/k8std-libsonnet/manifest/multifile/</loc>
+         <lastmod>2022-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
