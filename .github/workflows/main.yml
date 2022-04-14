@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: 'Deploy docs'
-    run-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-latest'
     steps:
       - name: 'Checkout main'
         uses: 'actions/checkout@v3.0.0'
