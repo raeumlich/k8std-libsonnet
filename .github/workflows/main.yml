@@ -1,0 +1,27 @@
+name: 'Publish docs via GitHub Pages'
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  build:
+    name: 'Deploy docs'
+    run-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout main'
+        uses: 'actions/checkout@v3.0.0'
+        with:
+          fetch-depth: 0
+
+      - name: 'Setup Python'
+        uses: 'actions/setup-python@v3.1.2'
+
+      - name: 'Install requirements'
+        run: 'pip install -r requirements.txt'
+
+      - name: 'Configure Git'
+        run: 'git config user.name "github-actions[bot]" && git config user.email "github-actions[bot]@users.noreply.github.com"'
+
+      - name: 'Publish docs'
+        run: 'mkdocs gh-deploy --force'
+

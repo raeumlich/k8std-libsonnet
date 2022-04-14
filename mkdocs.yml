@@ -1,0 +1,33 @@
+edit_uri: ''
+markdown_extensions:
+  - 'pymdownx.highlight'
+  - 'pymdownx.superfences'
+plugins:
+  - search:
+      indexing: 'titles'
+      min_search_length: 2
+      prebuild_index: true
+      separator: '[\\s\\-\\.]+'
+  - minify:
+      minify_html: true
+repo_name: 'raeumlich/k8std-libsonnet'
+repo_url: 'https://github.com/raeumlich/k8std-libsonnet'
+site_name: 'Kubernetes Standard Jsonnet Library'
+site_url: 'https://raeumlich.github.io/k8std-libsonnet'
+theme:
+  name: 'material'
+  palette:
+    - accent: 'indigo'
+      media: '(prefers-color-scheme: light)'
+      primary: 'indigo'
+      scheme: 'default'
+      toggle:
+        icon: 'material/toggle-switch-off-outline'
+        name: 'Switch to dark mode'
+    - accent: 'red'
+      media: '(prefers-color-scheme: dark)'
+      primary: 'red'
+      scheme: 'slate'
+      toggle:
+        icon: 'material/toggle-switch'
+        name: 'Switch to light mode'

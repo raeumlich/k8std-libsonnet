@@ -1,0 +1,8 @@
+# mkdocs
+mkdocs>=1.3.0
+
+# Minify the HTML output
+mkdocs-minify-plugin>=0.5
+
+# Material theme for mkdocs
+mkdocs-material>=8.2.9
