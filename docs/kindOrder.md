@@ -1,10 +1,12 @@
 ---
-permalink: /manifest/kindOrder/
+permalink: /kindOrder/
 ---
 
-# manifest.kindOrder
+# kindOrder
 
-Manages a list of Kinds for ordering within a manifest file or across multiple manifest files.
+Manages a list of Kinds for ordering within a manifest file or across
+multiple manifest files.
+
 
 ## Index
 
@@ -22,6 +24,8 @@ withKindsAfter(after, kinds, baseOrder=['Namespace', 'NetworkPolicy', 'ResourceQ
 ```
 
 Inserts an array of Kinds after the given Kind in baseOrder.
+`kinds` can also be a string if you want to add just one Kind.
+
 
 ### fn withKindsAtPosition
 
@@ -29,7 +33,9 @@ Inserts an array of Kinds after the given Kind in baseOrder.
 withKindsAtPosition(position, kinds, baseOrder=['Namespace', 'NetworkPolicy', 'ResourceQuota', 'LimitRange', 'PodSecurityPolicy', 'PodDisruptionBudget', 'ServiceAccount', 'Secret', 'ConfigMap', 'StorageClass', 'PersistentVolume', 'PersistentVolumeClaim', 'CustomResourceDefinition', 'ClusterRole', 'ClusterRoleBinding', 'Role', 'RoleBinding', 'Service', 'DaemonSet', 'Pod', 'ReplicationController', 'ReplicaSet', 'Deployment', 'HorizontalPodAutoscaler', 'StatefulSet', 'Job', 'CronJob', 'IngressClass', 'Ingress', 'APIService'])
 ```
 
-Inserts an array of Kinds at the given position. withKindsAfter() or withKindsBefore() might be more useful.
+Inserts an array of Kinds at the given position. withKindsAfter() or
+withKindsBefore() might be more useful.
+
 
 ### fn withKindsBefore
 
@@ -38,6 +44,7 @@ withKindsBefore(before, kinds, baseOrder=['Namespace', 'NetworkPolicy', 'Resourc
 ```
 
 Inserts an array of Kinds before the given Kind in baseOrder.
+
 
 ### array default
 

@@ -10,12 +10,17 @@ local getKindIndex(kind, order) = (
   '#':: d.pkg(
     name='kindOrder',
     url='',
-    help='Manages a list of Kinds for ordering within a manifest file or across multiple manifest files.',
+    help=|||
+      Manages a list of Kinds for ordering within a manifest file or across
+      multiple manifest files.
+    |||,
   ),
 
   '#default':: d.val(
     type=d.T.array,
-    help='The default order for Kubernetes resources.',
+    help=|||
+      The default order for Kubernetes resources.
+    |||,
     default=self.default,
   ),
   default:: [
@@ -52,7 +57,10 @@ local getKindIndex(kind, order) = (
   ],
 
   '#withKindsAtPosition':: d.fn(
-    help='Inserts an array of Kinds at the given position. withKindsAfter() or withKindsBefore() might be more useful.',
+    help=|||
+      Inserts an array of Kinds at the given position. withKindsAfter() or
+      withKindsBefore() might be more useful.
+    |||,
     args=[
       d.arg(name='position', type=d.T.integer),
       d.arg(name='kinds', type=d.T.array),
@@ -68,7 +76,10 @@ local getKindIndex(kind, order) = (
   ),
 
   '#withKindsAfter':: d.fn(
-    help='Inserts an array of Kinds after the given Kind in baseOrder.',
+    help=|||
+      Inserts an array of Kinds after the given Kind in baseOrder.
+      `kinds` can also be a string if you want to add just one Kind.
+    |||,
     args=[
       d.arg(name='after', type=d.T.string),
       d.arg(name='kinds', type=d.T.array),
@@ -84,7 +95,9 @@ local getKindIndex(kind, order) = (
   ),
 
   '#withKindsBefore':: d.fn(
-    help='Inserts an array of Kinds before the given Kind in baseOrder.',
+    help=|||
+      Inserts an array of Kinds before the given Kind in baseOrder.
+    |||,
     args=[
       d.arg(name='before', type=d.T.string),
       d.arg(name='kinds', type=d.T.array),

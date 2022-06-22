@@ -1,4 +1,4 @@
-local ko = import 'kindOrder.libsonnet';
+local ko = import '../kindOrder/main.libsonnet';
 
 {
   local d = (import 'doc-util/main.libsonnet'),
@@ -6,11 +6,17 @@ local ko = import 'kindOrder.libsonnet';
   '#':: d.pkg(
     name='multifile',
     url='',
-    help='Handles naming and ordering of resources when multiple file output is used.',
+    help=|||
+      Handles naming and ordering of resources when multiple file output is
+      used.
+    |||,
   ),
 
   '#addExtension':: d.fn(
-    help='Adds the file extension to the name of every visible field in the given object. If yaml is true .yaml is used otherwise .json.',
+    help=|||
+      Adds the file extension to the name of every visible field in the given
+      object. If yaml is true `.yaml` is used otherwise `.json`.
+    |||,
     args=[
       d.arg(name='resources', type=d.T.object),
       d.arg(name='yaml', type=d.T.boolean, default=false),
@@ -22,7 +28,11 @@ local ko = import 'kindOrder.libsonnet';
   },
 
   '#sortByKind':: d.fn(
-    help='Sorts the given resources by their Kind using order. The prefixLength handles the zero padding of the number prefix for each visible field.',
+    help=|||
+      Sorts the given resources by their Kind using `order`. The prefixLength
+      handles the zero padding of the number prefix that is added to get the
+      files in order on the file system.
+    |||,
     args=[
       d.arg(name='resources', type=d.T.object),
       d.arg(name='order', type=d.T.array, default=ko.default),
