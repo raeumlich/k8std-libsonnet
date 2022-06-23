@@ -21,6 +21,7 @@ Kubernetes resources.
 * [`fn parseYamlManifestToObject(yaml)`](#fn-parseyamlmanifesttoobject)
 * [`fn recommendedLabels(name='null', instance='null', version='null', component='null', part_of='null', managed_by='null', created_by='null')`](#fn-recommendedlabels)
 * [`fn setNamespace(o, ns, force=false)`](#fn-setnamespace)
+* [`fn setNamespaceAll(o, ns, force=false)`](#fn-setnamespaceall)
 
 ## Fields
 
@@ -97,5 +98,16 @@ setNamespace(o, ns, force=false)
 ```
 
 Sets the namespace `ns` on the given resource `o`.
+If the resource doesn't have any namespace set it doesn't change anything
+unless `force` is set to `true`.
+
+
+### fn setNamespaceAll
+
+```ts
+setNamespaceAll(o, ns, force=false)
+```
+
+Sets the namespace `ns` on all resources in `o`.
 If the resource doesn't have any namespace set it doesn't change anything
 unless `force` is set to `true`.
