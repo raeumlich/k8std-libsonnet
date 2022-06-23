@@ -134,6 +134,25 @@ local sets = {
     },
     run(input): input
   },
+
+  TestSetNameSpaceAll: {
+    tests: {
+      simple: {
+        input: k8std.setNamespaceAll(
+          {
+            one: {apiVersion: 'v1', kind: 'Foo', metadata: {namespace: 'foo'}},
+            two: {apiVersion: 'v1', kind: 'Bar', metadata: {namespace: 'foo'}},
+          },
+          'baz',
+        ),
+        want: {
+          one: {apiVersion: 'v1', kind: 'Foo', metadata: {namespace: 'baz'}},
+          two: {apiVersion: 'v1', kind: 'Bar', metadata: {namespace: 'baz'}},
+        },
+      },
+    },
+    run(input): input
+  },
 };
 
 t.run(sets)

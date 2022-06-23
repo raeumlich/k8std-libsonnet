@@ -143,6 +143,24 @@
     else
       o,
 
+  '#setNamespaceAll':: d.fn(
+    help=|||
+      Sets the namespace `ns` on all resources in `o`.
+      If the resource doesn't have any namespace set it doesn't change anything
+      unless `force` is set to `true`.
+    |||,
+    args=[
+      d.arg(name='o', type=d.T.object),
+      d.arg(name='ns', type=d.T.string),
+      d.arg(name='force', type=d.T.boolean, default=false),
+    ]
+  ),
+  setNamespaceAll(o, ns, force=false)::
+    std.mapWithKey(
+      function(n, o) $.setNamespace(o, ns, force),
+      o
+    ),
+
   kindOrder:: (import 'kindorder/main.libsonnet'),
   multifile:: (import 'multifile/main.libsonnet'),
 }
