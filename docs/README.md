@@ -22,6 +22,7 @@ Kubernetes resources.
 * [`fn recommendedLabels(name='null', instance='null', version='null', component='null', part_of='null', managed_by='null', created_by='null')`](#fn-recommendedlabels)
 * [`fn setNamespace(o, ns, force=false)`](#fn-setnamespace)
 * [`fn setNamespaceAll(o, ns, force=false)`](#fn-setnamespaceall)
+* [`fn sortByKind(resources, order=['Namespace', 'NetworkPolicy', 'ResourceQuota', 'LimitRange', 'PodSecurityPolicy', 'PodDisruptionBudget', 'ServiceAccount', 'Secret', 'ConfigMap', 'StorageClass', 'PersistentVolume', 'PersistentVolumeClaim', 'CustomResourceDefinition', 'ClusterRole', 'ClusterRoleBinding', 'Role', 'RoleBinding', 'Service', 'DaemonSet', 'Pod', 'ReplicationController', 'ReplicaSet', 'Deployment', 'HorizontalPodAutoscaler', 'StatefulSet', 'Job', 'CronJob', 'IngressClass', 'Ingress', 'APIService'], prefixLength=2)`](#fn-sortbykind)
 
 ## Fields
 
@@ -111,3 +112,15 @@ setNamespaceAll(o, ns, force=false)
 Sets the namespace `ns` on all resources in `o`.
 If the resource doesn't have any namespace set it doesn't change anything
 unless `force` is set to `true`.
+
+
+### fn sortByKind
+
+```ts
+sortByKind(resources, order=['Namespace', 'NetworkPolicy', 'ResourceQuota', 'LimitRange', 'PodSecurityPolicy', 'PodDisruptionBudget', 'ServiceAccount', 'Secret', 'ConfigMap', 'StorageClass', 'PersistentVolume', 'PersistentVolumeClaim', 'CustomResourceDefinition', 'ClusterRole', 'ClusterRoleBinding', 'Role', 'RoleBinding', 'Service', 'DaemonSet', 'Pod', 'ReplicationController', 'ReplicaSet', 'Deployment', 'HorizontalPodAutoscaler', 'StatefulSet', 'Job', 'CronJob', 'IngressClass', 'Ingress', 'APIService'], prefixLength=2)
+```
+
+Sorts the given resources by their Kind using `order`. The prefixLength
+handles the zero padding of the number prefix that is added to get the
+files in order on the file system, which is only relevant if you are using
+the multifile output.

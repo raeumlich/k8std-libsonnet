@@ -5,7 +5,7 @@ docs:
 	docker run \
 		--rm \
 		-v ${PWD}:/k8std \
-		jsonnetlibs/docsonnet:master \
+		jsonnetlibs/docsonnet:0.0.4 \
 		-o /k8std/docs \
 		/k8std/main.libsonnet
 

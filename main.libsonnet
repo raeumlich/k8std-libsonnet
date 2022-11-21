@@ -161,6 +161,40 @@
       o
     ),
 
+  '#sortByKind':: d.fn(
+    help=|||
+      Sorts the given resources by their Kind using `order`. The prefixLength
+      handles the zero padding of the number prefix that is added to get the
+      files in order on the file system, which is only relevant if you are using
+      the multifile output.
+    |||,
+    args=[
+      d.arg(name='resources', type=d.T.object),
+      d.arg(name='order', type=d.T.array, default=$.kindOrder.default),
+      d.arg(name='prefixLength', type=d.T.integer, default=2),
+    ],
+  ),
+  sortByKind(resources, order=$.kindOrder.default, prefixLength=2)::
+  {
+    ['%s_%s' % [item.prefix, item.name]]: item.value,
+    for item in std.mapWithIndex(
+      function(i, elem) (elem + { prefix: ('%%0%dd' % prefixLength) % (i+1) }),
+      std.sort(
+        std.objectValues(
+          std.mapWithKey(
+            function(k, v) { name: k, value: v },
+            resources,
+          ),
+        ),
+        keyF=function(res) (
+          local idxs = std.find(res.value.kind, order);
+          // Use the index of the first match if found otherwise move to end.
+          if std.length(idxs) > 0 then idxs[0] else 99
+        ),
+      )
+    )
+  },
+
   kindOrder:: (import 'kindorder/main.libsonnet'),
   multifile:: (import 'multifile/main.libsonnet'),
 }
