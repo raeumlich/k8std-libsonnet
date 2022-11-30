@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://raeumlich.github.io/k8std-libsonnet/</loc>
-         <lastmod>2022-11-21</lastmod>
+         <lastmod>2022-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://raeumlich.github.io/k8std-libsonnet/kindOrder/</loc>
-         <lastmod>2022-11-21</lastmod>
+         <lastmod>2022-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://raeumlich.github.io/k8std-libsonnet/multifile/</loc>
-         <lastmod>2022-11-21</lastmod>
+         <lastmod>2022-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
