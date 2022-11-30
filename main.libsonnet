@@ -68,7 +68,7 @@
     ]
   ),
   parseYamlManifestToObject(yaml)::
-    local parsed = std.parseYaml(yaml);
+    local parsed = std.prune(std.parseYaml(yaml));
     local getFieldName(kind, name) = '%s_%s' % [
       std.asciiLower(kind),
       std.asciiLower(name),

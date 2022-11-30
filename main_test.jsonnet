@@ -66,6 +66,34 @@ local sets = {
           }
         }
       },
+      stream_with_comment: {
+        // Tests against https://github.com/google/go-jsonnet/issues/660
+        input: |||
+          # Some comment
+          ---
+          kind: ConfigMap
+          metadata:
+            name: foo
+          ---
+          kind: Secret
+          metadata:
+            name: bar
+        |||,
+        want: {
+          configmap_foo: {
+            kind: 'ConfigMap',
+            metadata: {
+              name: 'foo'
+            }
+          },
+          secret_bar: {
+            kind: 'Secret',
+            metadata: {
+              name: 'bar'
+            }
+          }
+        }
+      },
     },
     run(input):: k8std.parseYamlManifestToObject(input)
   },
